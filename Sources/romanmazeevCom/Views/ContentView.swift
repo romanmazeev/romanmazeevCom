@@ -36,7 +36,7 @@ struct ContentView: View {
         }
     }
 
-    // TokamakUI Picker Bug
+    // Picker Bug https://github.com/romanmazeev/romanmazeevCom/issues/1
     private let sections = Section.allCases
     @State private var selection = 0
 
@@ -50,9 +50,8 @@ struct ContentView: View {
             }
 
             LazyVGrid(columns: [.init(alignment: .leading)]) {
-                ForEach(sections[selection].projects, id: \.title) { project in
+                ForEach(sections[selection].projects, id: \.self) { project in
                     ProjectView(project: project)
-                        .background(Color.accentColor)
                 }
             }
         }

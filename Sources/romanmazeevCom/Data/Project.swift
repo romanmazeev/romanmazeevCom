@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Project {
+struct Project: Hashable {
     let title: String
     let description: String
     let url: URL?
@@ -16,6 +16,7 @@ struct Project {
 enum OpenSourceProject: CaseIterable {
     case mrzScanner
     case mrzParser
+    case romanmazeevCom
 
     var project: Project {
         switch self {
@@ -31,12 +32,17 @@ enum OpenSourceProject: CaseIterable {
                 description: "MRZ (Machine Readable Zones) code parser for TD1 (ID cards), TD2, TD3 (Passports), MRVA (Visas type A), MRVB (Visas type B) types.",
                 url: URL(string: "https://github.com/romanmazeev/MRZParser")
             )
+        case .romanmazeevCom:
+            return .init(
+                title: "romanmazeev.com",
+                description: "Personal website written in Swift using TokamakUI",
+                url: URL(string: "https://github.com/romanmazeev/romanmazeevCom")
+            )
         }
     }
 }
 
 enum PetProject: CaseIterable {
-    case romanmazeevCom
     case diffuser
     case metary
     case draws
@@ -44,12 +50,6 @@ enum PetProject: CaseIterable {
 
     var project: Project {
         switch self {
-        case .romanmazeevCom:
-            return .init(
-                title: "romanmazeev.com",
-                description: "Personal website written in Swift using TokamakUI",
-                url: URL(string: "https://github.com/romanmazeev/romanmazeevCom")
-            )
         case .diffuser:
             return .init(
                 title: "Diffuser",

@@ -28,7 +28,7 @@ struct ProjectView: View {
                 .font(.subheadline)
         }
         .padding()
-        .background(Color.accentColor)
+        .border(Color.accentColor)
         .cornerRadius(8, antialiased: true)
     }
 }

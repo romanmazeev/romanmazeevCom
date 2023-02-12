@@ -7,12 +7,13 @@
 
 import TokamakShim
 
-public struct AppView: View {
-    public var body: some View {
+struct AppView: View {
+    var body: some View {
         VStack(spacing: 20) {
             HeaderView()
             
             ContentView()
+                .padding(.bottom)
             
             FooterView()
         }
