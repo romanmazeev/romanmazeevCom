@@ -27,9 +27,15 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/swiftwasm/carton:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Build website
+        shell: bash
+        run: |
+          carton bundle
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact

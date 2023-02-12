@@ -46,9 +46,9 @@ enum PetProject: CaseIterable {
         switch self {
         case .romanmazeevCom:
             return .init(
-                title: "romanmazeevCom",
+                title: "romanmazeev.com",
                 description: "Personal website written in Swift using TokamakUI",
-                url: URL(string: "https://github.com/romanmazeev/MRZScanner")
+                url: URL(string: "https://github.com/romanmazeev/romanmazeevCom")
             )
         case .diffuser:
             return .init(
@@ -80,15 +80,11 @@ enum PetProject: CaseIterable {
 
 enum WorkProject: CaseIterable {
     case restaurantsPos
-
     case appInTheAir
-
     case memoris
     case ikanoBank
     case toYou
-
     case reachView3
-
     case areopad
 
     var project: Project {
