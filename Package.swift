@@ -8,7 +8,7 @@ let package = Package(
         .executable(name: "romanmazeevCom", targets: ["romanmazeevCom"])
     ],
     dependencies: [
-        .package(url: "https://github.com/TokamakUI/Tokamak", branch: "main")
+        .package(url: "https://github.com/TokamakUI/Tokamak", branch: "fiber/view-support")
     ],
     targets: [
         .executableTarget(
@@ -18,10 +18,10 @@ let package = Package(
             ],
             resources: [
                 .copy("Images/avatar.png"),
-                .copy("Images/githubIcon.png"),
-                .copy("Images/instagramIcon.png"),
-                .copy("Images/linkedinIcon.png"),
-                .copy("Images/twitterIcon.png")
+                .copy("Images/githubIcon.svg"),
+                .copy("Images/instagramIcon.svg"),
+                .copy("Images/linkedinIcon.svg"),
+                .copy("Images/twitterIcon.svg")
             ]
         ),
         .testTarget(

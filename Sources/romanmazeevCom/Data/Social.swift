@@ -16,13 +16,13 @@ enum Social: CaseIterable {
     var imageName: String {
         switch self {
         case .github:
-            return "githubIcon.png"
+            return "githubIcon.svg"
         case .linkedin:
-            return "linkedinIcon.png"
+            return "linkedinIcon.svg"
         case .twitter:
-            return "twitterIcon.png"
+            return "twitterIcon.svg"
         case .instagram:
-            return "instagramIcon.png"
+            return "instagramIcon.svg"
         }
     }
 
