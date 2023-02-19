@@ -1,18 +1,12 @@
+//
+//  ContentView.swift
+//  
+//
+//  Created by Roman Mazeev on 19/02/2023.
+//
+
 import TokamakShim
 import Foundation
-
-@main
-struct RomanmazeevComApp: App {
-    #if os(WASI)
-    static let _configuration = _AppConfiguration(reconciler: .fiber(useDynamicLayout: true))
-    #endif
-
-    var body: some Scene {
-        WindowGroup("Roman Mazeev") {
-            ContentView()
-        }
-    }
-}
 
 struct ContentView: View {
     var body: some View {
@@ -22,18 +16,27 @@ struct ContentView: View {
                 .frame(width: 144, height: 202)
 
             VStack(spacing: 24) {
-                Text("Hi 👋 I’m Roman,\nSoftware Engineer")
-                    .bold()
-                    .font(.largeTitle)
-                    .multilineTextAlignment(.center)
+                VStack(spacing: 16) {
+                    Text("Hi 👋 I’m Roman,\nSoftware Engineer")
+                        .bold()
+                        .font(.largeTitle)
+                        .multilineTextAlignment(.center)
 
-                Text("Apple, open source development\nand Swift fan based in Amsterdam 🇳🇱")
-                    .foregroundColor(.gray)
-                    .multilineTextAlignment(.center)
+                    Text("Apple, open source development\nand Swift fan based in Amsterdam 🇳🇱")
+                        .multilineTextAlignment(.center)
+                }
 
-                Text("Currently at Lightspeed\nEx: App In The Air, Redmadrobot...")
-                    .foregroundColor(.gray)
-                    .multilineTextAlignment(.center)
+                VStack(spacing: 8) {
+                    Link(destination: URL(string: "https://www.lightspeedhq.com")!) {
+                        Text("Lightspeed")
+                            .bold()
+                            .foregroundColor(.red)
+                    }
+
+                    Text("Ex: App In The Air, Redmadrobot...")
+                        .foregroundColor(.gray)
+                        .multilineTextAlignment(.center)
+                }
             }
 
             VStack(spacing: 16) {

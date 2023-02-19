@@ -21,7 +21,8 @@ let package = Package(
                 .copy("Images/githubIcon.svg"),
                 .copy("Images/instagramIcon.svg"),
                 .copy("Images/linkedinIcon.svg"),
-                .copy("Images/twitterIcon.svg")
+                .copy("Images/twitterIcon.svg"),
+                .copy("Images/favicon.ico"),
             ]
         ),
         .testTarget(
